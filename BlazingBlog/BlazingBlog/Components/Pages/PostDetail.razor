@@ -1,0 +1,27 @@
+﻿@using BlazingBlog.Shared.Models
+@using BlazingBlog.Shared.Repository
+@inject IBlogPostRepository BlogPostRepository
+
+@page "/post/{PostId:int}"
+
+<PageTitle>Post Detail</PageTitle>
+
+@if (_post is not null)
+{
+    <h1>@_post.Title</h1>
+    <p>@_post.Content</p>
+    <p>This post has id: @_post.Id</p>
+}
+else
+{
+    <p>Post not found.</p>
+}
+
+@code {
+    [Parameter] public int PostId { get; set; }
+
+    private BlogPost? _post;
+
+    protected override async Task OnInitializedAsync() => _post = await BlogPostRepository.GetBlogPost(PostId);
+
+}

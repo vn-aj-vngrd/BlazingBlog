@@ -1,0 +1,36 @@
+﻿@using BlazingBlog.Shared.Models
+@using BlazingBlog.Shared.Repository
+@rendermode InteractiveServer
+
+@inject IBlogPostRepository BlogPostRepository
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorState</a>
+    </div>
+</div>
+
+<div class="ps-3">
+    <ul class="nav flex-column">
+        @foreach (var blogPost in _blogPosts)
+        {
+            <li class="nav-item">
+                <NavLink class="nav-link" href="@($"/post/{blogPost.Id}")">
+                    @blogPost.Title
+                </NavLink>
+            </li>
+        }
+    </ul>
+
+    <button class="btn btn-primary" @onclick="AddNewPost">Add New Post</button>
+</div>
+
+@code {
+
+    private List<BlogPost> _blogPosts;
+
+    protected override async Task OnParametersSetAsync() => _blogPosts = await BlogPostRepository.GetBlogPosts();
+
+    private void AddNewPost() => BlogPostRepository.AddBlogPost("New Post", "This is a new post").Wait();
+
+}

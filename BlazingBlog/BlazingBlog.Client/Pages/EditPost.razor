@@ -1,0 +1,44 @@
+@using BlazingBlog.Shared.Models
+@using BlazingBlog.Shared.Repository
+
+@rendermode InteractiveWebAssembly
+
+@inject IBlogPostRepository BlogPostRepository
+@inject NavigationManager NavigationManager
+
+@page "/edit/{PostId:int}"
+
+<EditForm Model="@this" OnValidSubmit="UpdatePost" class="p-4">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <InputText id="title" class="form-control" @bind-Value="Title"/>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <InputText id="content" class="form-control" @bind-Value="Content"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Post</button>
+    <button class="btn btn-secondary" @onclick="CancelEdit">Cancel</button>
+</EditForm>
+
+@code {
+
+    [Parameter] public int PostId { get; set; }
+    private BlogPost Post { get; set; }
+
+    protected override async Task OnInitializedAsync() => Post = await BlogPostRepository.GetBlogPost(PostId);
+
+    private string Title { get; set; }
+    private string Content { get; set; }
+
+    private async Task UpdatePost()
+    {
+        Post.Title = Title;
+        Post.Content = Content;
+        await BlogPostRepository.UpdateBlogPost(Post);
+    }
+
+    private void CancelEdit() => NavigationManager.NavigateTo($"/post/{PostId}");
+
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingBlog", "BlazingBlog\BlazingBlog\BlazingBlog.csproj", "{21740A35-1DA8-4866-9E10-52494FE6DE37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingBlog.Client", "BlazingBlog\BlazingBlog.Client\BlazingBlog.Client.csproj", "{AE72CA3F-3591-4978-A5BE-F1899F8146A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingBlog.Shared", "BlazingBlog.Shared\BlazingBlog.Shared.csproj", "{F22C463C-A90F-4B74-B0E3-D3E3A694C7C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21740A35-1DA8-4866-9E10-52494FE6DE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21740A35-1DA8-4866-9E10-52494FE6DE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21740A35-1DA8-4866-9E10-52494FE6DE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21740A35-1DA8-4866-9E10-52494FE6DE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE72CA3F-3591-4978-A5BE-F1899F8146A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE72CA3F-3591-4978-A5BE-F1899F8146A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE72CA3F-3591-4978-A5BE-F1899F8146A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE72CA3F-3591-4978-A5BE-F1899F8146A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F22C463C-A90F-4B74-B0E3-D3E3A694C7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F22C463C-A90F-4B74-B0E3-D3E3A694C7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F22C463C-A90F-4B74-B0E3-D3E3A694C7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F22C463C-A90F-4B74-B0E3-D3E3A694C7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
