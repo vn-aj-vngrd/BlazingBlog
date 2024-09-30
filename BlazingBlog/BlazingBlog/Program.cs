@@ -1,3 +1,4 @@
+using BlazingBlog;
 using BlazingBlog.Components;
 using BlazingBlog.Shared.Repository;
 
@@ -28,6 +29,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.MapBlogApi();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()

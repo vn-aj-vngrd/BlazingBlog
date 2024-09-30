@@ -31,4 +31,6 @@ public class BlogPostRepository : IBlogPostRepository
     });
 
     public Task DeleteBlogPost(int id) => Task.Run(() => _blogPosts.Remove(_blogPosts.First(x => x.Id == id)));
+    
+    public event Action? OnStateChanged;
 }

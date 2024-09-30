@@ -13,4 +13,6 @@ public interface IBlogPostRepository
     Task UpdateBlogPost(BlogPost blogPost);
     
     Task DeleteBlogPost(int id);
+    
+    event Action? OnStateChanged;
 }
